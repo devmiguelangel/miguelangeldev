@@ -1,17 +1,24 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 // Components
 import Home from '../components/Home';
-import '../assets/css/App.styl'
+import '../assets/css/App.styl';
+// Styles
+import { GlobalStyles, lightTheme, darkTheme } from '../components/styles';
 
-
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [theme, setTheme] = useState('light');
+  const isDarkTheme = theme === 'dark';
+  const toggleTheme = () => setTheme(isDarkTheme ? 'light' : 'dark');
 
   return (
-    <div className="App">
-      <Home />
-    </div>
-  )
-}
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <>
+        <GlobalStyles />
+        <Home />
+      </>
+    </ThemeProvider>
+  );
+};
 
-export default App
+export default App;
