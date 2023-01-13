@@ -1,9 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import colors from './colors';
 
-interface IThemeProps {
+export interface IThemeProps {
+  mode: 'light' | 'dark';
+  main: string;
   bg: string;
   text: string;
+  menuMobile: {
+    bg: string;
+    text: string;
+  };
 }
 
 interface IGlobalThemeProps {
@@ -24,12 +30,18 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
+const defaultTheme = {
+  main: colors.main,
+};
+
 export const lightTheme = {
-  bg: colors.bg.light,
-  text: colors.text.light,
+  mode: 'light',
+  ...defaultTheme,
+  ...colors.light,
 };
 
 export const darkTheme = {
-  bg: '#121620',
-  text: '#f1f1f1',
+  mode: 'dark',
+  ...defaultTheme,
+  ...colors.dark,
 };

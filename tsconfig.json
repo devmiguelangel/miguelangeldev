@@ -19,7 +19,11 @@
     "removeComments": true
   },
   "references": [{ "path": "./tsconfig.node.json" }],
-  "include": ["src"],
+  "include": [
+    "src",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
   "exclude": [
     "./node_modules/**/*"
   ]

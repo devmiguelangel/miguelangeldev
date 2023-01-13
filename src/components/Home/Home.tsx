@@ -2,7 +2,7 @@ import React from 'react';
 // Components
 import { HomeView, TitleName, TitleCareer } from './Home.styles';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <HomeView>
       <p>
