@@ -13,6 +13,9 @@ const Menu: React.FC<MenuProps> = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const theme = useTheme() as IThemeProps;
+  console.log('########################');
+  console.log(theme);
+  console.log('########################');
 
   return (
     <MenuView>
@@ -22,28 +25,26 @@ const Menu: React.FC<MenuProps> = ({ toggleTheme }) => {
       >
         {isOpen ? <i className="ri-close-line"></i> : <i className="ri-menu-2-fill"></i>}
       </MenuIcon>
-      {isOpen && (
-        <MenuList bgColor={theme.menuMobile.bg} textColor={theme.menuMobile.text}>
-          <li>
-            <MenuLink href="#!">home</MenuLink>
-          </li>
-          <li>
-            <MenuLink href="#!">about me</MenuLink>
-          </li>
-          <li>
-            <MenuLink href="#!">portfolio</MenuLink>
-          </li>
-          <li>
-            <MenuLink href="#!">contact</MenuLink>
-          </li>
-        </MenuList>
-      )}
-      {isOpen && (
-        <ModeBox onClick={toggleTheme}>
-          {theme.mode === 'light' && <i className="ri-sun-fill"></i>}
-          {theme.mode === 'dark' && <i className="ri-moon-fill"></i>}
-        </ModeBox>
-      )}
+
+      <MenuList show={isOpen} bgColor={theme.menuMobile.bg} textColor={theme.menuMobile.text}>
+        <li>
+          <MenuLink href="#!">home</MenuLink>
+        </li>
+        <li>
+          <MenuLink href="#!">about me</MenuLink>
+        </li>
+        <li>
+          <MenuLink href="#!">portfolio</MenuLink>
+        </li>
+        <li>
+          <MenuLink href="#!">contact</MenuLink>
+        </li>
+      </MenuList>
+
+      <ModeBox show={isOpen} onClick={toggleTheme}>
+        {theme.mode === 'light' && <i className="ri-sun-fill"></i>}
+        {theme.mode === 'dark' && <i className="ri-moon-fill"></i>}
+      </ModeBox>
     </MenuView>
   );
 };
