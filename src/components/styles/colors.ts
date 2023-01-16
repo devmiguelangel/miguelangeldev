@@ -1,24 +1,11 @@
-const MAIN_COLOR = '#40d783';
-const MAIN_TEXT_COLOR = '#FCFAEE';
+export const MAIN = '#40d783';
 
-const colors = {
-  main: MAIN_COLOR,
-  light: {
-    bg: '#f8f8f8',
-    text: '#364259',
-    menuMobile: {
-      bg: MAIN_COLOR,
-      text: MAIN_TEXT_COLOR,
-    },
-  },
-  dark: {
-    bg: '#1a202c',
-    text: MAIN_TEXT_COLOR,
-    menuMobile: {
-      bg: '#364259',
-      text: MAIN_TEXT_COLOR,
-    },
-  },
-};
+export const MAIN_LIGHT = '#f8f8f8';
 
-export default colors;
+export const MAIN_DARK = '#1A202C';
+
+export const MAIN_DIMMED = '#364259';
+
+export const TEXT_LIGHT = '#FCFAEE';
+
+export const TEXT_DARK = '#364259';

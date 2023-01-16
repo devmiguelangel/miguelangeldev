@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { devices } from '../styles';
+import { devices, colors } from '../styles';
 
 export const MenuView = styled.div`
   position: fixed;
@@ -21,7 +21,7 @@ export const MenuView = styled.div`
 `;
 
 interface MenuIconProps {
-  color: string;
+  isOpen: boolean;
 }
 
 export const MenuIcon = styled.a<MenuIconProps>`
@@ -32,7 +32,7 @@ export const MenuIcon = styled.a<MenuIconProps>`
   height: 44px;
   margin: 30px 30px 0 0;
   font-size: 36px;
-  color: ${(props) => props.color};
+  color: ${(props) => (props.theme.mode === 'light' && !props.isOpen ? colors.TEXT_DARK : colors.TEXT_LIGHT)};
   z-index: 10;
 
   @media ${devices.tablet} {
@@ -52,17 +52,11 @@ export const MenuLink = styled.a`
   @media ${devices.tablet} {
     width: 185px;
     height: 80px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 
-interface MenuListProps {
-  show: boolean;
-  bgColor: string;
-  textColor: string;
-}
-
-export const MenuList = styled.ul<MenuListProps>`
+export const MenuList = styled.ul`
   position: fixed;
   top: 0;
   display: flex;
@@ -72,7 +66,6 @@ export const MenuList = styled.ul<MenuListProps>`
   width: 100%;
   height: 100vh;
   margin: 0;
-  background-color: ${(props) => props.bgColor};
   border-bottom-left-radius: 50%;
   list-style: none;
 
@@ -90,21 +83,23 @@ export const MenuList = styled.ul<MenuListProps>`
   }
 
   ${MenuLink} {
-    color: ${(props) => props.textColor};
+    color: ${(props) => props.theme.textPrimary};
+
+    @media ${devices.mobileS} {
+      color: ${colors.TEXT_LIGHT};
+    }
 
     @media ${devices.tablet} {
       font-weight: 300;
-      color: #1A202C;
     }
   }
 
   @media ${devices.mobileS} {
-    display: ${(props) => (props.show ? 'flex' : 'none')};
+    background-color: ${(props) => (props.theme.mode === 'light' ? colors.MAIN : colors.MAIN_DIMMED)};
   }
 
   @media ${devices.tablet} {
     position: initial;
-    display: flex;
     flex-direction: row;
     width: auto;
     height: auto;
@@ -113,12 +108,8 @@ export const MenuList = styled.ul<MenuListProps>`
   }
 `;
 
-interface ModeBoxProps {
-  show: boolean;
-}
-
-export const ModeBox = styled.div<ModeBoxProps>`
-  display: ${(props) => (props.show ? 'flex' : 'none')};
+export const ModeBox = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
   align-self: center;
@@ -128,7 +119,7 @@ export const ModeBox = styled.div<ModeBoxProps>`
   background-color: rgba(248, 248, 248, 0.4);
   border-radius: 50%;
   font-size: 24px;
-  color: #fcfaee;
+  color: ${colors.TEXT_LIGHT};
   cursor: pointer;
   z-index: 10;
 
@@ -137,6 +128,6 @@ export const ModeBox = styled.div<ModeBoxProps>`
     align-self: auto;
     margin-left: 40px;
     margin-bottom: 0;
-    color: peru;
+    color: ${(props) => props.theme.textPrimary};
   }
 `;
