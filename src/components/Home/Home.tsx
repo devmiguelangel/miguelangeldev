@@ -4,7 +4,7 @@ import { HomeView, TitleName, TitleCareer } from './Home.styles';
 
 const Home: React.FC = () => {
   return (
-    <HomeView>
+    <HomeView id="home">
       <p>
         Hi,
         <br />

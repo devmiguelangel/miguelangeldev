@@ -43,16 +43,16 @@ const Menu: React.FC<MenuProps> = ({ toggleTheme }) => {
       {isOpen && (
         <MenuList>
           <li>
-            <MenuLink href="#!">home</MenuLink>
+            <MenuLink href="#home">home</MenuLink>
           </li>
           <li>
-            <MenuLink href="#!">about me</MenuLink>
+            <MenuLink href="#about">about me</MenuLink>
           </li>
           <li>
-            <MenuLink href="#!">portfolio</MenuLink>
+            <MenuLink href="#portfolio">portfolio</MenuLink>
           </li>
           <li>
-            <MenuLink href="#!">contact</MenuLink>
+            <MenuLink href="#contact">contact</MenuLink>
           </li>
         </MenuList>
       )}

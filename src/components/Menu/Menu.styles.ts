@@ -15,12 +15,13 @@ export const MenuView = styled.nav<MenuViewProps>`
   height: ${(props) => (props.isOpen ? '100vh' : 'auto')};
 
   @media ${devices.tablet} {
-    top: 22px;
-    right: 44px;
+    top: 0;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     height: auto;
+    padding-top: 22px;
+    background-color: ${(props) => props.theme.bgPrimary as string};
   }
 `;
 
@@ -93,6 +94,11 @@ export const MenuList = styled.ul`
   ${MenuLink} {
     color: ${colors.TEXT_LIGHT};
 
+    &:hover,
+    &:active {
+      color: ${(props) => props.theme.main as string};
+    }
+
     @media ${devices.tablet} {
       font-weight: 300;
       color: ${(props) => props.theme.textPrimary as string};
@@ -121,6 +127,7 @@ export const ModeIcon = styled.div`
   width: 36px;
   height: 36px;
   margin-bottom: 100px;
+  margin-right: 44px;
   background-color: rgba(248, 248, 248, 0.4);
   border-radius: 50%;
   font-size: 24px;

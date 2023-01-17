@@ -26,6 +26,18 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }: IGlobalThemeProps) => theme.textPrimary};
     /* transition: background 0.2s ease-in, color 0.2s ease-in; */
   }
+
+  h1, h2 {
+    font-family: OpenSans;
+    font-size: 2.25rem;
+    font-weight: 400;
+    color: ${colors.MAIN};
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: ${colors.TEXT_DARK};
+  }
 `;
 
 const defaultTheme = {
