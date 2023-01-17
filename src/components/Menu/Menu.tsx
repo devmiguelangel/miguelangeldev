@@ -1,7 +1,7 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useTheme } from 'styled-components';
 // Components
-import { MenuView, MenuIcon, MenuList, MenuLink, ModeBox } from './Menu.styles';
+import { MenuView, MenuIcon, MenuList, MenuLink, ModeIcon } from './Menu.styles';
 // Interfaces
 import { sizes, IThemeProps } from '../styles';
 
@@ -26,9 +26,17 @@ const Menu: React.FC<MenuProps> = ({ toggleTheme }) => {
     return () => window.removeEventListener('resize', updateSize);
   }, []);
 
+  useEffect(() => {
+    if (size >= sizes.tablet) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [size]);
+
   return (
-    <MenuView>
-      <MenuIcon isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <MenuView isOpen={isOpen}>
+      <MenuIcon isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} data-testid="menu-icon">
         {isOpen ? <i className="ri-close-line"></i> : <i className="ri-menu-2-fill"></i>}
       </MenuIcon>
 
@@ -50,9 +58,9 @@ const Menu: React.FC<MenuProps> = ({ toggleTheme }) => {
       )}
 
       {isOpen && (
-        <ModeBox textColor={size >= sizes.tablet ? theme.textPrimary : ''} onClick={toggleTheme}>
+        <ModeIcon onClick={toggleTheme}>
           <i className={theme.mode === 'light' ? 'ri-sun-fill' : 'ri-moon-fill'}></i>
-        </ModeBox>
+        </ModeIcon>
       )}
     </MenuView>
   );
