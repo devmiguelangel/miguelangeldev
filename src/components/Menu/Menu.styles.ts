@@ -127,7 +127,6 @@ export const ModeIcon = styled.div`
   width: 36px;
   height: 36px;
   margin-bottom: 100px;
-  margin-right: 44px;
   background-color: rgba(248, 248, 248, 0.4);
   border-radius: 50%;
   font-size: 24px;
@@ -139,6 +138,7 @@ export const ModeIcon = styled.div`
     display: flex;
     align-self: auto;
     margin-left: 40px;
+    margin-right: 44px;
     margin-bottom: 0;
     color: ${(props) => props.theme.textPrimary as string};
   }
