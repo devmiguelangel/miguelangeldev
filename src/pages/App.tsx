@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import Home from '../components/Home';
 import Menu from '../components/Menu';
 import AboutMe from '../components/AboutMe';
+import Contact from '../components/Contact';
 import { GlobalStyles, lightTheme, darkTheme } from '../components/styles';
 // Styles
 import '../assets/css/App.styl';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Menu toggleTheme={toggleTheme} />
         <Home />
         <AboutMe />
+        <Contact />
       </>
     </ThemeProvider>
   );

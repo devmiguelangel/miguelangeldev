@@ -6,7 +6,8 @@ export const AboutView = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  /* height: 100vh; */
   padding: 6rem 0 2rem 0;
 `;
 
