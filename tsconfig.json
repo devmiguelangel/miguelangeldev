@@ -16,13 +16,15 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "removeComments": true
+    "removeComments": true,
+    "types": ["node", "@testing-library/jest-dom", "vitest/globals"]
   },
   "references": [{ "path": "./tsconfig.node.json" }],
   "include": [
     "src",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "setupTest.ts"
   ],
   "exclude": [
     "./node_modules/**/*"

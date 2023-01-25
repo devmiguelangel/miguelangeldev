@@ -30,13 +30,15 @@ npm create vite@latest
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "removeComments": true
+    "removeComments": true,
+    "types": ["node", "@testing-library/jest-dom", "vitest/globals"]
   },
   "references": [{ "path": "./tsconfig.node.json" }],
   "include": [
     "src",
     "vite.config.ts",
-    "vitest.config.ts"
+    "vitest.config.ts",
+    "setupTest.ts"
   ],
   "exclude": [
     "./node_modules/**/*"
@@ -83,3 +85,49 @@ npm i -DE \
 >#### [.eslintrc](.eslintrc)
 
 >#### [.prettierrc](.prettierrc)
+
+## Testing setup
+
+* Installation
+
+```bash
+npm i -DE \
+  vitest \
+  @testing-library/react \
+  @testing-library/jest-dom \
+  @testing-library/user-event \
+  jsdom \
+  @vitest/coverage-c8
+```
+
+* Configuration
+
+```ts
+// setupTest.ts
+
+import { expect } from 'vitest';
+import matchers from '@testing-library/jest-dom/matchers';
+
+expect.extend(matchers);
+```
+
+```ts
+// vite.config.ts
+
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTest.ts',
+  },
+});
+
+```
