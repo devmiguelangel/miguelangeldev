@@ -132,7 +132,7 @@ export default defineConfig({
 
 ```
 
-## Storybook support
+## Storybook setup
 
 * Installation
 
