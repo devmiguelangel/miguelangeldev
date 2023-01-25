@@ -10,11 +10,12 @@ export enum Size {
 
 export interface ITitle {
   size?: 'x-large' | 'large' | 'medium' | 'base' | 'small';
+  color?: string;
 }
 
 export const Title = styled.h1<ITitle>`
-  color: #1a202c;
-  /* font-size: 2.25rem; */
+  margin: 0;
   font-size: ${(props) => (props.size ? Size[props.size] : '2.25rem')};
   font-weight: 600;
+  color: ${(props) => props.color || 'inherit'};
 `;

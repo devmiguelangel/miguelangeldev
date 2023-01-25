@@ -1,12 +1,19 @@
 import React from 'react';
 // Components
-import Title from '../Title';
+import * as S from './Home.styles';
+import Title from '../shared/Title';
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <Title label="Hi, \n IU+0060m Miguel Angel \n Software Engineer & Product Designer" />
-    </div>
+    <S.HomeView>
+      <Title>
+        Hi,
+        <br />
+        I&apos;m Miguel Angel
+        <br />
+        Software Engineer & Product Designer
+      </Title>
+    </S.HomeView>
   );
 };
 
