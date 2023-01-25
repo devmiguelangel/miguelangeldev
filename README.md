@@ -131,3 +131,11 @@ export default defineConfig({
 });
 
 ```
+
+## Storybook support
+
+* Installation
+
+```bash
+npx storybook init
+```

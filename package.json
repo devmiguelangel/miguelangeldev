@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -17,6 +19,14 @@
     "styled-components": "5.3.6"
   },
   "devDependencies": {
+    "@babel/core": "7.20.12",
+    "@storybook/addon-actions": "6.5.15",
+    "@storybook/addon-essentials": "6.5.15",
+    "@storybook/addon-interactions": "6.5.15",
+    "@storybook/addon-links": "6.5.15",
+    "@storybook/builder-vite": "0.3.0",
+    "@storybook/react": "6.5.15",
+    "@storybook/testing-library": "0.0.13",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/user-event": "14.4.3",
@@ -27,6 +37,7 @@
     "@typescript-eslint/parser": "5.49.0",
     "@vitejs/plugin-react": "3.0.1",
     "@vitest/coverage-c8": "0.28.2",
+    "babel-loader": "8.3.0",
     "eslint": "8.32.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-import-resolver-typescript": "3.5.3",

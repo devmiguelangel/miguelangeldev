@@ -1,13 +1,11 @@
 import React from 'react';
+// Components
+import Title from '../Title';
 
 const Home: React.FC = () => {
   return (
     <div>
-      Hi,
-      <br />
-      IU+0060m Miguel Angel
-      <br />
-      Software Engineer & Product Designer
+      <Title label="Hi, \n IU+0060m Miguel Angel \n Software Engineer & Product Designer" />
     </div>
   );
 };
