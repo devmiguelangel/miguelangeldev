@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 // Components
 import Home from './components/Home';
 import Header from './components/Header';
+import AboutMe from './components/AboutMe';
 // Styles
 import { GlobalStyles, lightTheme, darkTheme } from './components/styles/theme';
 import GlobalFonts from './components/styles/fonts';
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Header toggleTheme={toggleTheme} />
 
         <Home />
+        <AboutMe />
       </>
     </ThemeProvider>
   );
