@@ -13,12 +13,12 @@ const App: React.FC = () => {
   const toggleTheme = (): void => setTheme(isDarkTheme ? 'light' : 'dark');
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <>
         <GlobalFonts />
         <GlobalStyles />
 
-        <Header />
+        <Header toggleTheme={toggleTheme} />
 
         <Home />
       </>

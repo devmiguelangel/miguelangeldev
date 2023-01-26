@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
+import { useTheme } from 'styled-components';
 // Components
 import * as S from './Header.styles';
 import Menu from '../Menu';
 // Styles
 import 'remixicon/fonts/remixicon.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  toggleTheme(): void;
+}
+
+const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const theme = useTheme();
+
   return (
-    <S.Header isOpenMenu={isOpen}>
-      <S.MenuIcon onClick={() => setIsOpen(!isOpen)}>
+    <S.Header isMenuOpen={isOpen}>
+      <S.MenuIcon isMenuOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <i className="ri-close-line ri-2x"></i> : <i className="ri-menu-2-line ri-2x"></i>}
       </S.MenuIcon>
 
@@ -18,8 +25,8 @@ const Header: React.FC = () => {
         <>
           <Menu />
 
-          <S.ModeIcon>
-            <i className="ri-moon-fill ri-xl"></i>
+          <S.ModeIcon onClick={toggleTheme}>
+            {theme.mode === 'light' ? <i className="ri-sun-fill ri-xl"></i> : <i className="ri-moon-fill ri-xl"></i>}
           </S.ModeIcon>
         </>
       )}

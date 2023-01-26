@@ -34,6 +34,6 @@ export const Link = styled.a`
   padding: 11px 0;
   font-size: 2rem;
   font-weight: 300;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   text-decoration: none;
 `;
