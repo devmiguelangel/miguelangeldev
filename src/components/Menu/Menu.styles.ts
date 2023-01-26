@@ -1,16 +1,7 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
-  position: fixed;
-  top: 0;
-  display: flex;
-  width: 100%;
-  height: auto;
-  background-color: beige;
-  z-index: 1;
-`;
-
 export const Nav = styled.nav`
+  /* position: absolute; */
   display: flex;
   width: 100%;
 `;
@@ -21,12 +12,10 @@ export const List = styled.ul`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   padding: 0;
-  background-color: #40d783;
   list-style: none;
-  border-bottom-left-radius: 187px;
 
   & > li {
     margin-bottom: 16px;
