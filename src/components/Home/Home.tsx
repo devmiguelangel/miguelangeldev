@@ -6,13 +6,19 @@ import Title from '../shared/Title';
 const Home: React.FC = () => {
   return (
     <S.HomeView>
-      <Title>
-        Hi,
+      <p>
+        <Title>Hi,</Title>
         <br />
-        I&apos;m Miguel Angel
+
+        <Title>I&apos;m </Title>
+        <Title weight="bold">Miguel Angel</Title>
+
         <br />
-        Software Engineer & Product Designer
-      </Title>
+        <Title weight="bold" color="#40D783">
+          Software Engineer
+          <br /> & Product Designer
+        </Title>
+      </p>
     </S.HomeView>
   );
 };
