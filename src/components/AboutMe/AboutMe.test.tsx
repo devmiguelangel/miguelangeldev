@@ -1,9 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { ThemeConsumer } from 'styled-components';
+import { lightTheme } from '../styles/theme';
 import AboutMe from './AboutMe';
 
 describe('<AboutMe />', () => {
-  beforeAll(() => {
+  beforeEach(() => {
+    ThemeConsumer._currentValue = lightTheme;
     render(<AboutMe />);
   });
 
@@ -12,6 +15,10 @@ describe('<AboutMe />', () => {
   });
 
   test('should render photo', () => {
-    expect(screen.getByAltText('my-photo')).toBeInTheDocument();
+    expect(screen.getByAltText(/snapshot/i)).toBeInTheDocument();
+  });
+
+  test('should render CV link', () => {
+    expect(screen.getByRole('link')).toBeInTheDocument();
   });
 });

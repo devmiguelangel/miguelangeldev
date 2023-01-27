@@ -1,16 +1,33 @@
 import React from 'react';
+import { useTheme } from 'styled-components';
 // Components
-import Title from '../shared/Title';
+import * as S from './AboutMe.styles';
+import { Title, Link, Text } from '../shared';
 
 const AboutMe: React.FC = () => {
-  return (
-    <section>
-      <Title>About me</Title>
+  const theme = useTheme();
 
-      <picture>
-        <img src="/images/vite.svg" alt="my-photo" />
-      </picture>
-    </section>
+  return (
+    <S.View id="about">
+      <Title color={theme.colors.main} weight="semibold">
+        About me
+      </Title>
+
+      <S.Picture>
+        <img src="/images/photo.jpg" alt="my snapshot" />
+      </S.Picture>
+
+      <S.Introduce>
+        <Text size="large">
+          Passionate Software Engineer & Product Designer for 8+ years, working with Python / JavaScript / ReactJS, new
+          technology and sports enthusiast
+        </Text>
+      </S.Introduce>
+
+      <Link href="/files/MiguelResume.pdf" target="_blank" style={{ marginTop: '40px' }}>
+        Download CV
+      </Link>
+    </S.View>
   );
 };
 
