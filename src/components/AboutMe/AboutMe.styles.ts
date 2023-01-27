@@ -5,7 +5,7 @@ export const View = styled.section`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  height: auto;
   padding-top: 95px;
 `;
 

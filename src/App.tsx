@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import Home from './components/Home';
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
+import Skill from './components/Skill';
 // Styles
 import { GlobalStyles, lightTheme, darkTheme } from './components/styles/theme';
 import GlobalFonts from './components/styles/fonts';
@@ -23,6 +24,7 @@ const App: React.FC = () => {
 
         <Home />
         <AboutMe />
+        <Skill />
       </>
     </ThemeProvider>
   );

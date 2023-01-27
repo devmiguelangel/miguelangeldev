@@ -3,7 +3,11 @@ import { createGlobalStyle, DefaultTheme } from 'styled-components';
 // Colors
 export const COLOR_MAIN = '#40d783';
 
+export const COLOR_MAIN_SECONDARY = '#90A959';
+
 export const COLOR_LIGHT = '#FFFDF7';
+
+export const COLOR_LIGHT_SECONDARY = '#F5E9E2';
 
 export const COLOR_DARK = '#1A202C';
 
@@ -16,8 +20,11 @@ export interface IGlobalTheme {
 
 const defaultColors = {
   main: COLOR_MAIN,
+  mainSecondary: COLOR_MAIN_SECONDARY,
   white: COLOR_LIGHT,
+  whiteSecondary: COLOR_LIGHT_SECONDARY,
   black: COLOR_DARK,
+  dimmed: COLOR_DIMMED,
 };
 
 export const lightTheme: DefaultTheme = {
@@ -25,7 +32,6 @@ export const lightTheme: DefaultTheme = {
   colors: {
     primary: COLOR_LIGHT,
     secondary: COLOR_DARK,
-    dimmed: COLOR_DIMMED,
     ...defaultColors,
   },
 };
@@ -35,7 +41,6 @@ export const darkTheme: DefaultTheme = {
   colors: {
     primary: COLOR_DARK,
     secondary: COLOR_LIGHT,
-    dimmed: COLOR_DIMMED,
     ...defaultColors,
   },
 };
