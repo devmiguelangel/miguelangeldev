@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Section from '@components/ui/Section';
 import Button from '@components/ui/Button';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, Send } from 'lucide-react';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({

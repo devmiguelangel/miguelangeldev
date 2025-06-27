@@ -12,7 +12,7 @@ function App() {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
 
-        const href = this.getAttribute('href');
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
         if (!href) return;
 
         const targetElement = document.querySelector(href);

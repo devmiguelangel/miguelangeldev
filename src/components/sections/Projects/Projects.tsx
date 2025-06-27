@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Section from '@components/ui/Section';
 import ProjectCard from '@components/ui/ProjectCard';
 import Button from '@components/ui/Button';
