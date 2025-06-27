@@ -12,9 +12,14 @@ export interface Project {
 export interface Skill {
   name: string;
   icon: string;
-  proficiency: number; // 1-5
-  category: 'frontend' | 'backend' | 'devops' | 'other';
 }
+
+export interface SkillCategory {
+  title: string;
+  icon: string; // Lucide icon name
+  iconColorClass: string; // Tailwind color class for the icon
+  skills: Skill[];
+};
 
 export interface SocialLink {
   name: string;
