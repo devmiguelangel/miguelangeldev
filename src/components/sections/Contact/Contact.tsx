@@ -64,21 +64,11 @@ export const Contact = () => {
         <div>
           <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            I'm interested in freelance opportunities – especially ambitious or large projects.
+            I'm interested in freelance opportunities - especially ambitious or large projects.
             However, if you have other requests or questions, don't hesitate to contact me.
           </p>
 
           <div className="space-y-6">
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
-                <MapPin size={20} />
-              </div>
-              <div>
-                <h4 className="text-lg font-medium text-gray-900 dark:text-white">Location</h4>
-                <p className="text-gray-600 dark:text-gray-400">San Francisco, California</p>
-              </div>
-            </div>
-
             <div className="flex items-start gap-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
                 <Mail size={20} />
@@ -86,10 +76,10 @@ export const Contact = () => {
               <div>
                 <h4 className="text-lg font-medium text-gray-900 dark:text-white">Email</h4>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:me@miguelangeldev.com"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 >
-                  hello@example.com
+                  me@miguelangeldev.com
                 </a>
               </div>
             </div>
