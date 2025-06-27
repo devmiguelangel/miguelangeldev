@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import Container from '@components/ui/Container';
 import Button from '@components/ui/Button';
 import { socialLinks } from '@/data/socialLinks';
+import avatar from '@/assets/images/avatar.jpg';
 
 export const Hero = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -38,14 +39,16 @@ export const Hero = () => {
               </h1>
               <h2
                 ref={textRef}
-                className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-700 mb-8 h-12"
+                className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-700 dark:text-gray-300 mb-8 h-12"
               >
                 Software Engineer & Product Designer
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 animate-slide-up">
-                I'm a passionate Software Engineer with over 6 years of experience building web applications
-                using modern technologies. I specialize in creating responsive, user-friendly interfaces and
-                robust backend systems.
+                I'm a passionate Software Engineer with over 8 years of experience building web applications
+                using modern technologies. I specialize in building scalable backend systems with Python and PHP,
+                orchestrating cloud infrastructure with Kubernetes, and creating seamless CI/CD pipelines.
+                <br />
+                Passionate about clean code, automation, and modern technologies.
               </p>
             </div>
 
@@ -54,10 +57,10 @@ export const Hero = () => {
                 <p className="font-medium text-gray-900 dark:text-white">Email:</p>
                 <p className="text-gray-600 dark:text-gray-400">me@miguelangeldev.com</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="font-medium text-gray-900 dark:text-white">Experience:</p>
                 <p className="text-gray-600 dark:text-gray-400">8+ years</p>
-              </div>
+              </div> */}
             </div>
 
             <div className="space-y-6">
@@ -88,7 +91,7 @@ export const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button
                   variant="primary"
-                  className="group flex items-center gap-2"
+                  className="group flex items-center gap-2 cursor-pointer"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Get in Touch
@@ -96,7 +99,7 @@ export const Hero = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 cursor-pointer"
                   onClick={() => window.open('/resume.pdf', '_blank')}
                 >
                   Download Resume
@@ -110,7 +113,7 @@ export const Hero = () => {
             <div className="relative w-full max-w-md">
               <div className="aspect-square overflow-hidden rounded-xl shadow-lg">
                 <img
-                  src="/images/avatar.jpg"
+                  src={avatar}
                   alt="Miguel Angel"
                   className="w-full h-full object-cover"
                 />
