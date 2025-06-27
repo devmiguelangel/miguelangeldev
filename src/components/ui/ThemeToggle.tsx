@@ -69,7 +69,7 @@ const ThemeToggle = () => {
       size="sm"
       onClick={toggleTheme}
       aria-label={getLabel()}
-      className="rounded-full p-2"
+      className="rounded-full p-2 cursor-pointer"
     >
       {getIcon()}
     </Button>
