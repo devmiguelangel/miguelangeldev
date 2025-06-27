@@ -16,4 +16,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
 })
