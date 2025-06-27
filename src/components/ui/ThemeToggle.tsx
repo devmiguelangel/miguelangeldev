@@ -17,17 +17,17 @@ const ThemeToggle = () => {
     if (newTheme === 'system') {
       // Remove any manual override, let CSS handle it automatically
       root.style.colorScheme = 'light dark';
-      root.classList.remove('light-theme', 'dark-theme');
+      // root.classList.remove('dark');
     } else if (newTheme === 'light') {
       // Force light mode
       root.style.colorScheme = 'light';
-      root.classList.add('light-theme');
-      root.classList.remove('dark-theme');
+      // root.classList.add('light');
+      root.classList.remove('dark');
     } else {
       // Force dark mode
       root.style.colorScheme = 'dark';
-      root.classList.add('dark-theme');
-      root.classList.remove('light-theme');
+      root.classList.add('dark');
+      // root.classList.remove('light');
     }
   };
 
