@@ -34,7 +34,7 @@ export const Footer = () => {
               })}
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              &copy; {currentYear} John Doe. All rights reserved.
+              &copy; {currentYear} Miguel Angel. All rights reserved.
             </p>
           </div>
         </div>
