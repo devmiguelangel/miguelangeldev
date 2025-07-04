@@ -16,9 +16,4 @@ export const socialLinks: SocialLink[] = [
     url: 'https://x.com/miguelangello',
     icon: 'twitter',
   },
-  {
-    name: 'Email',
-    url: 'mailto:me@miguelangeldev.com',
-    icon: 'mail',
-  },
 ];
