@@ -4,7 +4,7 @@ import * as LucideIcons from 'lucide-react';
 import Container from '@components/ui/Container';
 import Button from '@components/ui/Button';
 import { socialLinks } from '@/data/socialLinks';
-import avatar from '@/assets/images/avatar.jpg';
+import avatar from '@/assets/images/avatar.jpeg';
 
 export const Hero = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
