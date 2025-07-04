@@ -13,21 +13,15 @@ const ThemeToggle = () => {
 
   const applyTheme = (newTheme: string) => {
     const root = document.documentElement;
+    const isDark = newTheme === 'dark' ||
+      (newTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    if (newTheme === 'system') {
-      // Remove any manual override, let CSS handle it automatically
-      root.style.colorScheme = 'light dark';
-      // root.classList.remove('dark');
-    } else if (newTheme === 'light') {
-      // Force light mode
-      root.style.colorScheme = 'light';
-      // root.classList.add('light');
-      root.classList.remove('dark');
-    } else {
-      // Force dark mode
-      root.style.colorScheme = 'dark';
+    root.style.colorScheme = isDark ? 'dark' : 'light';
+
+    if (isDark) {
       root.classList.add('dark');
-      // root.classList.remove('light');
+    } else {
+      root.classList.remove('dark');
     }
   };
 
